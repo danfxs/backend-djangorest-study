@@ -5,6 +5,7 @@ class Base(models.Model):
     criacao = models.DateTimeField(auto_now_add=True)
     atualizacao = models.DateTimeField(auto_now=True)
     ativo = models.BooleanField(default=True)
+    objects = models.Manager()
 
     class Meta:
         abstract = True
