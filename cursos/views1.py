@@ -5,6 +5,7 @@ from rest_framework import status
 from .models import Curso, Avaliacao
 from .serializers import CursoSerializer, AvaliacaoSerializer
 
+
 class CursoAPIView(APIView):
     """
     API DE CURSOS
@@ -20,11 +21,11 @@ class CursoAPIView(APIView):
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
+
 class AvaliacaoAPIView(APIView):
     """
     API DE AVALIACOES
     """
-
     def get(self, request):
         avaliacoes = Avaliacao.objects.all()
         serializer = AvaliacaoSerializer(avaliacoes, many=True)
